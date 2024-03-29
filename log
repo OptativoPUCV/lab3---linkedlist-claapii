@@ -83,3 +83,16 @@ list.c:77:6: note: declared here
 cc1: all warnings being treated as errors
 Compilation failed
 06a1490
+Fri 29 Mar 2024 12:23:14 AM UTC: 
+ list.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:5:
+list.c: In function ‘pushFront’:
+list.c:80:48: error: expected ‘;’ before ‘nuevoNodo’
+   80 |   if(list->head == NULL) nuevoNodo = list->head
+      |                                                ^
+      |                                                ;
+   81 |   nuevoNodo->next = list->head;
+      |   ~~~~~~~~~                                     
+Compilation failed
+b95f7b9
