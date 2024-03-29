@@ -126,31 +126,13 @@ void * popBack(List * list) {
 
 void * popCurrent(List * list) 
 {
-    if(list->current == NULL)
-        return NULL; // No hay nodo actual, no se puede hacer pop
-
-    void * data = list->current->data; // Guarda el dato del nodo actual
-
-    if (list->current->prev == NULL) {
-        // El nodo actual es el primero de la lista
-        list->head = list->current->next;
-        if (list->head != NULL)
-            list->head->prev = NULL;
-    } else if (list->current->next == NULL) {
-        // El nodo actual es el último de la lista
-        list->tail = list->current->prev;
-        if (list->tail != NULL)
-            list->tail->next = NULL;
-    } else {
-        // El nodo actual está en medio de la lista
-        list->current->prev->next = list->current->next;
-        list->current->next->prev = list->current->prev;
-    }
-
-    free(list->current); // Libera la memoria del nodo eliminado
-    list->current = NULL; // Actualiza el puntero current
-
-    return data; // Retorna el dato del nodo eliminado
+  if(list->current == NULL)
+    return 0;
+  if (list->current->prev == NULL) {
+    list->head = list->current->next;
+    if (list->head != NULL)
+        list->head->prev = NULL;
+  
 }
 
 void cleanList(List * list) {
