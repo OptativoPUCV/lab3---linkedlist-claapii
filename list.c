@@ -96,23 +96,7 @@ void pushBack(List * list, void * data) {
 }
 
 void pushCurrent(List * list, void * data) 
-{
-  Node* nuevoNodo = createNode(data);
-  if(list->current == NULL)
-  {
-    pushFront(list,data); //Verifica que sea una lista vacía y lo pone en el primer elemento
-  }
-  else
-  {
-    nuevoNodo->prev = list->current;
-    nuevoNodo->next = list->current->next;
-    if(list->current->next == NULL) //En caso de ser el último elemento (current) ponemos que tail = nuevoNodo
-    {
-      list->tail = nuevoNodo;
-    }
-    list->current->next = nuevoNodo;
-  }
-}
+
 
 void * popFront(List * list) {
     list->current = list->head;

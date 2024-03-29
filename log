@@ -336,3 +336,72 @@ list.c:136:1: error: control reaches end of non-void function [-Werror=return-ty
 cc1: all warnings being treated as errors
 Compilation failed
 afed4e0
+Fri 29 Mar 2024 01:40:27 AM UTC: 
+ list.c | 18 +-----------------
+ 1 file changed, 1 insertion(+), 17 deletions(-)
+In file included from test.c:5:
+list.c: In function ‘pushCurrent’:
+list.c:101:30: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘{’ token
+  101 | void * popFront(List * list) {
+      |                              ^
+list.c:106:29: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘{’ token
+  106 | void * popBack(List * list) {
+      |                             ^
+list.c:112:1: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘{’ token
+  112 | {
+      | ^
+list.c:124:1: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘{’ token
+  124 | {
+      | ^
+test.c:9:1: error: parameter ‘test_id’ is initialized
+    9 | int test_id = -1;
+      | ^~~
+test.c:12:14: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘{’ token
+   12 | int success(){
+      |              ^
+test.c:17:24: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘{’ token
+   17 | void err_msg(char* msg){
+      |                        ^
+test.c:24:23: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘{’ token
+   24 | void ok_msg(char* msg){
+      |                       ^
+test.c:30:25: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘{’ token
+   30 | void info_msg(char* msg){
+      |                         ^
+test.c:35:75: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘{’ token
+   35 | int test_suite(int(*test)(), char* msg, int max_score, int id, int req_id){
+      |                                                                           ^
+test.c:51:26: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘{’ token
+   51 | List* initialize_exList(){
+      |                          ^
+test.c:73:29: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘{’ token
+   73 | List* initialize_emptyList(){
+      |                             ^
+test.c:83:18: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘{’ token
+   83 | int test_create(){
+      |                  ^
+test.c:98:22: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘{’ token
+   98 | int test_first_next(){
+      |                      ^
+test.c:171:21: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘{’ token
+  171 | int test_last_prev(){
+      |                     ^
+test.c:233:21: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘{’ token
+  233 | int test_pushfront(){
+      |                     ^
+test.c:298:23: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘{’ token
+  298 | int test_pushcurrent(){
+      |                       ^
+test.c:357:22: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘{’ token
+  357 | int test_popcurrent(){
+      |                      ^
+test.c:448:36: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘{’ token
+  448 | int main( int argc, char *argv[] ) {
+      |                                    ^
+In file included from test.c:5:
+list.c:98:6: error: old-style parameter declarations in prototyped function definition
+   98 | void pushCurrent(List * list, void * data)
+      |      ^~~~~~~~~~~
+test.c:469: error: expected ‘{’ at end of input
+Compilation failed
+de66402
