@@ -124,8 +124,17 @@ void * popBack(List * list) {
     return popCurrent(list);
 }
 
-void * popCurrent(List * list) {
-    return NULL;
+void * popCurrent(List * list) 
+{
+  if(list->current == NULL)
+    return 0;
+  if(list->current == list->head) //Verificar que sea el primero
+    list->head = list->head->next;
+  if(list->current == list->tail) //Verificar que sea el último
+    list->tail = list->tail->prev;
+  list->current->prev->next = list->current->next;
+  list->current->next->prev = list->current->prev;
+
 }
 
 void cleanList(List * list) {
