@@ -31,8 +31,8 @@ Node * createNode(void * data) {
 List * createList() 
 {
   List* list = (List*)malloc(sizeof(List));
-  list->head = 0;
-  list->tail = 0;
+  list->head = NULL;
+  list->tail = NULL;
   list->current = NULL;
   return list;
 }
@@ -56,7 +56,8 @@ void * nextList(List * list)
   return list->current->data;
 }
 
-void * lastList(List * list) {
+void * lastList(List * list) 
+{
     return NULL;
 }
 
