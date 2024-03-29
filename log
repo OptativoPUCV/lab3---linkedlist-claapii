@@ -96,3 +96,8 @@ list.c:80:48: error: expected ‘;’ before ‘nuevoNodo’
       |   ~~~~~~~~~                                     
 Compilation failed
 b95f7b9
+Fri 29 Mar 2024 12:23:22 AM UTC: 
+ list.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  0|0
+3f6ec4e
