@@ -106,15 +106,13 @@ void pushCurrent(List * list, void * data)
   {
     nuevoNodo->prev = list->current;
     nuevoNodo->next = list->current->next;
-    if(list->current->next != NULL) //Al no ser el último elemento
+    if(list->current->next == NULL) //Al no ser el último elemento
     {
-      list->current->next = nuevoNodo;
+      list->tail = nuevoNodo
     }
-    else //Verifica si es el último elemento en la lista
-    {
-      list->tail = nuevoNodo;
-    }
+    
     list->current->next = nuevoNodo;
+
   }
 }
 
