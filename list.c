@@ -126,12 +126,10 @@ void * popBack(List * list) {
 
 void * popCurrent(List * list) 
 {
-  if(list->current == NULL)
-    return 0;
   if(list->current == list->head) //Verificar que sea el primero
   {
-    list->head = list->head->next;
-    list->current = list->head;
+    list->head = list->current->next;
+    list->current = list->current->next;
   }
   if(list->current == list->tail) //Verificar que sea el último
     list->tail = list->tail->prev;
