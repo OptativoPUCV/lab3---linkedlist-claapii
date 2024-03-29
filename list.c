@@ -96,7 +96,9 @@ void pushBack(List * list, void * data) {
 }
 
 void pushCurrent(List * list, void * data) 
-
+{
+  return NULL;
+}
 
 void * popFront(List * list) {
     list->current = list->head;
