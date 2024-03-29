@@ -135,7 +135,9 @@ void * popCurrent(List * list)
   list->current = NULL;
 }
 
-void cleanList(List * list) {
+
+void cleanList(List * list) 
+{
     while (list->head != NULL) {
         popFront(list);
     }
