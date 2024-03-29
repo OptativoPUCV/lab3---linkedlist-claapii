@@ -44,3 +44,16 @@ Fri 29 Mar 2024 12:19:17 AM UTC:
  tests:  6|4
 total_score: 25/70
 9422104
+Fri 29 Mar 2024 12:20:12 AM UTC: 
+ list.c | 10 ++++++++--
+ 1 file changed, 8 insertions(+), 2 deletions(-)
+In file included from test.c:5:
+list.c: In function ‘prevList’:
+list.c:74:23: error: expected ‘;’ before ‘}’ token
+   74 |   return list->current
+      |                       ^
+      |                       ;
+   75 | }
+      | ~                      
+Compilation failed
+ed5bd1c
