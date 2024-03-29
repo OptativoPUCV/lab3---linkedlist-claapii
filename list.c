@@ -100,21 +100,21 @@ void pushCurrent(List * list, void * data)
   Node* nuevoNodo = createNode(data);
   if(list->current == NULL)
   {
-      pushFront(list, data); // Llama a la función pushFront si list->current es NULL
+    pushFront(list,data); //Verifica que sea una lista vacía y lo pone en el primer elemento
   }
   else
   {
-      nuevoNodo->prev = list->current;
-      nuevoNodo->next = list->current->next;
-      if(list->current->next != NULL)
-      {
-          list->current->next->prev = nuevoNodo; // Actualiza el nodo siguiente al nuevo nodo
-      }
-      else
-      {
-          list->tail = nuevoNodo; // Actualiza list->tail si el nodo siguiente es NULL
-      }
-      list->current->next = nuevoNodo; // Conecta el nodo actual al nuevo nodo
+    nuevoNodo->prev = list->current;
+    nuevoNodo->next = list->current->next;
+    if(list->current->next != NULL)
+    {
+      list->current = nuevoNodo;
+    }
+    else //Verifica si es el último elemento en la lista
+    {
+      list->tail = nuevoNodo;
+    }
+    list->current->next = nuevoNodo;
   }
 }
 
