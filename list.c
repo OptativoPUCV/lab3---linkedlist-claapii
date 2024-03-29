@@ -100,19 +100,22 @@ void pushCurrent(List * list, void * data)
   Node* nuevoNodo = createNode(data);
   if(list->current == NULL)
   {
-    pushFront(list,data);
+      pushFront(list, data); // Llama a la función pushFront si list->current es NULL
   }
   else
   {
-    nuevoNodo->prev = list->current;
-    nuevoNodo->next = list->current->next;
-    if(list->current->next != NULL)
-    {
-      list->tail = nuevoNodo;
-    }
-    list->current->next = nuevoNodo;
+      nuevoNodo->prev = list->current;
+      nuevoNodo->next = list->current->next;
+      if(list->current->next != NULL)
+      {
+          list->current->next->prev = nuevoNodo; // Actualiza el nodo siguiente al nuevo nodo
+      }
+      else
+      {
+          list->tail = nuevoNodo; // Actualiza list->tail si el nodo siguiente es NULL
+      }
+      list->current->next = nuevoNodo; // Conecta el nodo actual al nuevo nodo
   }
-  
 }
 
 void * popFront(List * list) {
